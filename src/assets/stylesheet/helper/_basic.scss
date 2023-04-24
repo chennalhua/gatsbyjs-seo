@@ -1,0 +1,311 @@
+//* 基本標籤 reset
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+//* 字型
+.text-Nunito-Weight {
+    font-family: "Nunito", sans-serif !important;
+}
+
+div,
+p,
+span,
+a,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+p {
+    text-align: justify;
+}
+
+.btn:hover {
+    border: 1px solid transparent;
+}
+
+//* 文字轉大寫
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+//* 必填選項
+.required {
+    color: $danger;
+    margin: 0 1px;
+}
+
+//* 顏色
+.btn {
+    &-primary-gradient {
+        background: linear-gradient(90deg, #58aa60 0%, #34aa6b 100%);
+        color: $light;
+        transition: all 0.3s;
+        border: 2px solid transparent;
+        box-shadow: 0px 0px 10px 0 rgba(#107a47, 0.7);
+        &:hover {
+            background: linear-gradient(90deg, #107a47 0%, #58aa60 100%);
+            border: 2px solid transparent;
+            color: $light;
+            box-shadow: 0px 0px 10px 0 rgba(#107a47, 0.7);
+        }
+        &:active,
+        &:focus {
+            border: 1px solid transparent;
+            color: $light;
+        }
+    }
+    &-border-primary-gradient {
+        border: 2px solid $primary-l !important;
+        color: $primary-l;
+        box-sizing: border-box !important;
+        &:hover {
+            background: linear-gradient(90deg, #107a47 0%, #58aa60 100%);
+            color: $light;
+            box-shadow: 0px 0px 10px 0 rgba(#107a47, 0.7);
+            border: 2px solid transparent;
+        }
+        &:active {
+            color: $primary-l;
+        }
+    }
+}
+//* "白"半透明背景 + "白"線條
+.bg-half-white {
+    background-color: rgba($light, 0.5);
+    border: 1px solid $light;
+}
+
+.bg-clip-path {
+    clip-path: ellipse(120% 100% at 55% 0%);
+    @include view-768 {
+        clip-path: ellipse(205% 100% at 55% 0%);
+    }
+}
+
+//* 字型
+.font-18px {
+    font-size: 18px;
+}
+
+//* 文字 letter-space
+.header-title {
+    letter-spacing: 2px;
+}
+
+//* 圖片 hover 效果
+.img-hover {
+    img {
+        transition: all 0.3s;
+    }
+    &:hover img {
+        transform: scale(1.1);
+    }
+}
+
+//* 置中
+@mixin position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.position-center {
+    @include position-center;
+}
+
+//* scroll bar
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+}
+
+//* 日期 input
+.calendar-input-container {
+    position: relative;
+    .icon-calendar {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
+}
+
+//* 滾動 X 軸 container (超出範圍往右滑)
+.scroll-container {
+    display: flex;
+    margin: auto;
+    justify-content: flex-start;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+//* 虛線分隔線
+.dot-line {
+    margin: 30px 0;
+    border: 1px dashed $light;
+    border-bottom: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+.dot-line-bottom-primary-light {
+    // padding: 10px 0;
+    padding-bottom: 10px;
+    border: 1px dashed $primary-l;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+.dot-line-top-primary-light {
+    // padding: 10px 0;
+    padding-top: 10px;
+    border: 1px dashed $primary-l;
+    border-bottom: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+//* 鼠標「手型」
+.cursor-pointer {
+    cursor: pointer;
+}
+
+//* 英文轉大寫
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+//* ol li 國字數字
+.text-cjk {
+    list-style-type: cjk-ideographic;
+}
+
+//* 文章
+article {
+    .title {
+        color: $primary;
+    }
+    .subtitle {
+        font-size: 22px;
+        color: #000;
+        margin: 10px 0;
+        border-left: 8px solid #000;
+        padding-left: 8px;
+    }
+    .list-title {
+        font-size: 18px;
+        color: $secondary;
+        margin: 10px 0;
+    }
+    p,
+    td {
+        font-weight: 500;
+        color: #3e3a39;
+        margin: 15px 0;
+    }
+    strong {
+        color: $danger;
+    }
+    div {
+        padding: 10px 0;
+    }
+}
+
+//* share-button
+.share-button-box {
+    border-radius: 20px;
+    padding: 5px !important;
+    margin: 0 5px;
+}
+
+.cookie-content {
+    position: fixed;
+    bottom: 0;
+    z-index: 100000; //為了蓋過 facebook 客服 button
+    background: rgba(26, 26, 26, 0.7);
+    color: #fff;
+    p {
+        letter-spacing: 2px;
+        line-height: 32px;
+        text-align: justify;
+    }
+}
+
+.banner-top {
+    @include view-576 {
+        margin-top: 205px;
+    }
+}
+
+.img-mask {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+//@ 隱藏 input number 滾動條
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+//@ width
+.w {
+    &-65 {
+        width: 65%;
+    }
+}
+
+//* input [type='number'] 取消上下鍵
+/* Chrome, Safari, Edge, Opera */
+.hide-arrows::-webkit-outer-spin-button,
+.hide-arrows::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.hide-arrows {
+    -moz-appearance: "textfield";
+}
+
+.img-grayscale {
+    -webkit-filter: grayscale(16);
+    opacity: 0.8;
+}

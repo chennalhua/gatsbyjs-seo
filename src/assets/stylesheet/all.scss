@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap);
+
+//@ plugin
+//*-- bootstrap
+@import "~bootstrap/scss/functions";
+@import "./helper/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/bootstrap";
+@import "./helper/utilities";
+@import "./components/accordion";
+
+//@helper
+@import "./helper/responsive";
+@import "./helper/basic";
+@import "./helper/plugin";
+//@ components
+@import "./components/layout";
+@import "./components/components";
+//@ view
+@import "./view/view";
+@import "./view/pet";
+@import "./view/life";

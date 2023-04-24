@@ -1,0 +1,336 @@
+//@ Nav
+.menu {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 8px 30px;
+    width: 80%;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include view-1400 {
+        width: 90%;
+    }
+    @include view-992 {
+        border-radius: 0;
+        padding: 10px 20px;
+        margin: 0;
+        width: 100%;
+    }
+    .login-button {
+        // 登入 button
+        display: flex;
+        align-items: center;
+        padding: 8px 18px;
+        &::after {
+            content: "登入 / 註冊";
+            color: #fff;
+            margin-left: 6px;
+        }
+        @include view-992 {
+            border-radius: 50% !important;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            position: relative;
+            display: block;
+            margin-left: 8px;
+            .icon-user {
+                @include position-center;
+            }
+            &::after {
+                content: "";
+                margin: 0;
+            }
+        }
+    }
+    .menu-list {
+        @include view-992 {
+            height: calc(100vh - 55px);
+            overflow-y: scroll;
+            position: absolute;
+            left: 0;
+            top: 55px;
+            width: 100%;
+            background: $light;
+            padding: 15px;
+            li,
+            a {
+                display: block !important;
+                text-align: start !important;
+                padding: 15px 0;
+            }
+        }
+        @include view-390 {
+            top: 54px;
+            padding-top: 15px;
+        }
+    }
+    &.primary-navigation {
+        text-align: center;
+        font-size: 16px;
+        ul li {
+            list-style: none;
+            margin: 0 auto;
+            display: inline-block;
+            padding: 0 20px;
+            text-decoration: none;
+            text-align: center;
+            // position: relative;
+        }
+
+        li a {
+            color: black;
+            display: block;
+        }
+
+        li a:hover,
+        ul > li:hover > a,
+        ul:not(:hover) > li.active > a {
+            color: $primary;
+        }
+
+        ul > li:hover > .is-dropdown,
+        ul:not(:hover) > li.active > .is-dropdown {
+            position: relative;
+            &::after {
+                content: "";
+                background: transparent;
+                width: 100px;
+                height: 100px;
+                // color: $primary-m;
+                color: $light;
+                position: absolute;
+                bottom: -40px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 24px;
+                z-index: 30;
+            }
+        }
+
+        li:hover {
+            cursor: pointer;
+        }
+
+        .menu-dropdown {
+            overflow: hidden;
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            padding-left: 0;
+            display: none;
+            background: $light;
+            border-radius: 15px;
+            @include view-992 {
+                border-radius: 0;
+                position: static;
+                & > div {
+                    display: block !important;
+                }
+            }
+            transition: all 0.3s ease;
+            li {
+                display: block;
+            }
+            ul {
+                padding: 10px 5px;
+                position: relative;
+                width: 255px;
+                @include view-992 {
+                    // padding: 15px 0;
+                    display: block !important;
+                    width: 100%;
+                }
+            }
+            a {
+                padding: 3px 0;
+            }
+        }
+
+        ul li:hover > .menu-dropdown,
+        .menu-dropdown:hover {
+            background: $light;
+            visibility: visible;
+            opacity: 1;
+            display: block;
+            text-align: left;
+            margin-top: 30px;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+            @include view-992 {
+                box-shadow: none;
+                padding-top: 0;
+                margin-top: -15px;
+            }
+        }
+
+        ul li ul li {
+            clear: both;
+            width: 100%;
+            text-align: left;
+            margin: 15px 0;
+            border-style: none;
+            @include view-992 {
+                margin-bottom: 5px;
+            }
+        }
+
+        ul li ul li a:hover {
+            padding-left: 10px;
+            border-left: 2px solid $primary;
+            transition: all 0.3s ease;
+        }
+    }
+    .dropdown-title {
+        border-bottom: 2px solid $primary !important;
+        border-width: 90% !important;
+    }
+    a {
+        text-decoration: none;
+        &:hover {
+            color: $primary;
+        }
+    }
+    ul li ul li a {
+        transition: all 0.5s ease;
+    }
+}
+
+.logo {
+    background: url("../../image/basic/gogobo-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 180px;
+    overflow: hidden;
+    @include view-390 {
+        width: 150px;
+    }
+    a {
+        text-indent: 101%;
+        white-space: nowrap;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    img {
+        width: 180px;
+        @include view-576 {
+            width: 160px;
+        }
+    }
+}
+
+//@ Footer
+.footer {
+    padding: 56px 0 26px 0;
+    .copyright {
+        line-height: 30px;
+        margin-top: 30px;
+        @include view-768 {
+            margin-top: 32px;
+        }
+    }
+}
+
+//@ Header
+.header-bg-mask {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 260px;
+    clip-path: ellipse(95% 95% at 50% 0%);
+    position: relative;
+    z-index: 1;
+    @include view-576 {
+        clip-path: ellipse(145% 95% at 50% 0%);
+    }
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(#34aa6b, 0.8);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .title {
+        width: 100%;
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+}
+.about-header-bg-mask {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+    clip-path: ellipse(95% 95% at 50% 0%);
+    position: relative;
+    z-index: 1;
+    @include view-576 {
+        clip-path: ellipse(145% 95% at 50% 0%);
+    }
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(#fffae7, 0.8);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .title {
+        width: 100%;
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+}
+
+//@ Login
+.login {
+    &-or {
+        display: flex;
+        align-items: center;
+        p {
+            padding: 0 10px;
+        }
+        &::before,
+        &::after {
+            content: "";
+            width: 100%;
+            display: block;
+            border-top: 1px solid rgba($dark, 0.3);
+            border-bottom: 1px solid transparent;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+        }
+    }
+}
+
+//@ RouteWrapper
+.route-wrapper {
+    height: 100vh;
+    overflow: hidden;
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background: #fff;
+    }
+    .load-icon {
+        @include position-center;
+        z-index: 100;
+    }
+}

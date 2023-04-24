@@ -1,0 +1,333 @@
+//@ HomePage
+//* -- HomeBanner
+.home-banner {
+    .icon-arrow_left_line {
+        transform: rotate(0deg);
+        font-size: 14px;
+    }
+    .icon-arrow_right_line {
+        font-size: 14px;
+    }
+}
+//* -- 保險懶人包
+.knowledge-item {
+    background-color: $light;
+    transition: ease-in-out 0.5s;
+    &-img {
+        @include view-576 {
+            height: 152px !important;
+            object-position: center;
+        }
+    }
+    img {
+        transform: scale(1);
+        transition: ease-in-out 0.5s;
+    }
+    &:hover {
+        background-color: $primary;
+        .title,
+        .tag,
+        .content {
+            color: $light !important;
+        }
+        img {
+            transform: scale(1.2);
+        }
+    }
+    .title {
+        color: $primary;
+    }
+    .tag {
+        color: $primary-l;
+    }
+}
+
+//* -- 最新消息
+.news-list {
+    .date {
+        @include view-992 {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+}
+//@ 跑馬燈
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-(20% * 6));
+    }
+}
+@include view-1200 {
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-(25% * 6));
+        }
+    }
+}
+@include view-768 {
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-(33.33% * 6));
+        }
+    }
+}
+//@ 跑馬燈
+#marquee {
+    width: 100%;
+    .view {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        &::before,
+        &::after {
+            content: "";
+            width: 45px;
+            height: 100px;
+            position: absolute;
+            z-index: 10;
+        }
+        &::before {
+            content: "";
+            left: 0;
+            background: linear-gradient(90deg, #f5f8e3 0, hsla(0, 0%, 100%, 0));
+        }
+        &::after {
+            content: "";
+            right: 0;
+            top: 0;
+            background: linear-gradient(270deg, #f5f8e3 0, hsla(0, 0%, 100%, 0));
+        }
+    }
+    .pic-container {
+        display: flex;
+        animation: marquee 40s infinite linear;
+        .pic {
+            flex-basis: 14%;
+            flex-shrink: 0;
+            @include view-1200 {
+                flex-basis: 14%;
+            }
+            @include view-768 {
+                flex-basis: 33.33%;
+            }
+        }
+    }
+    img {
+        width: 100px;
+        vertical-align: middle;
+    }
+}
+
+//@ FAQ
+.faq-list {
+    .btn {
+        box-shadow: 0 0 8px 0 rgba(#828282, 0.2);
+    }
+}
+.fqa-desktop-icon {
+    position: absolute;
+    top: 74px;
+    left: 20%;
+    transform: translateX(-20%);
+}
+
+//@ signUp
+.rule-scroll {
+    overflow-y: scroll;
+    // height: 380px;
+    margin: 10px 0;
+    @include view-768 {
+        height: 230px;
+    }
+}
+.btn-read-all {
+    background: #fff;
+    color: $primary;
+    font-weight: bolder;
+    border-radius: 50px;
+    box-shadow: 0px 4px 8px rgba(109, 142, 112, 0.4);
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    &:hover,
+    &:active,
+    &:focus {
+        background: $primary;
+        color: #fff;
+        box-shadow: 0px 4px 8px rgba(109, 142, 112, 0.4);
+    }
+}
+.service-bg {
+    background: $primary-s;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    position: relative;
+    .icon-service {
+        position: absolute;
+        @include position-center;
+    }
+}
+
+//@member
+//* -- insurance record
+.ins-record-container {
+    font-size: 14px;
+    border: 1px solid #d7d7d7;
+    max-width: 100%;
+    @include view-768 {
+        display: block !important;
+    }
+    .body {
+        text-align: center;
+        @include view-768 {
+            width: 100% !important;
+            display: flex !important;
+        }
+    }
+    .header {
+        background: $primary-m;
+        padding: 10px;
+        @include view-768 {
+            width: 30%;
+            border: 1px solid #d7d7d7;
+        }
+        @include view-576 {
+            width: 40%;
+        }
+    }
+    .content {
+        padding: 10px;
+        @include view-768 {
+            width: 70%;
+            border: 1px solid #d7d7d7;
+        }
+        @include view-576 {
+            width: 60%;
+        }
+    }
+}
+//* -- insurance record single
+.ins-record-single-container {
+    max-width: 100%;
+    .header {
+        width: 30%;
+        padding: 8px;
+        align-items: center;
+        border: 1px solid #d8d8d8;
+        background: #f1f1f1;
+        @include view-768 {
+            width: 100%;
+        }
+    }
+    .content {
+        width: 70%;
+        padding: 8px;
+        align-items: center;
+        border: 1px solid #d8d8d8;
+        @include view-768 {
+            width: 100%;
+        }
+    }
+}
+//* -- change password
+.change-password {
+    .forget-password {
+        position: absolute;
+        top: 50%;
+        right: -70px;
+        transform: translateY(-50%);
+        @include view-768 {
+            position: static;
+            display: block;
+            transform: translateY(0);
+            margin-top: 8px;
+        }
+    }
+}
+//* -- personal
+.member-personal-data {
+    .basic-item {
+        max-width: 100%;
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        .header {
+            display: block;
+            background: rgba(152, 152, 152, 0.2);
+            padding: 10px;
+        }
+        .body {
+            display: block;
+            background: rgba(152, 152, 152, 0.1);
+            padding: 10px;
+        }
+    }
+}
+
+//@ blog
+.blog-header {
+    @include view-768 {
+        margin-top: -110px;
+    }
+}
+.blog-item {
+    &:hover.content {
+        color: #fff !important;
+    }
+}
+.member-navbar-content {
+    display: flex;
+    .side-bar {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 90px;
+    }
+}
+
+.pro-bar {
+    margin-top: -85px;
+    @include view-768 {
+        margin-top: -60px;
+    }
+}
+.insurance-pro-bar{
+    margin-top: -85px;
+    @include view-768 {
+        margin-top: -92px;
+    }
+}
+
+//@ case (商品說明
+.choose-target {
+    background: $light;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.1);
+}
+
+//@ vaccine page
+.vaccine-insurance-logo {
+    img {
+        width: 140px;
+        @include view-1400 {
+            width: 120px;
+        }
+    }
+}
+
+//@ Event
+.event-iframe {
+    .img {
+        width: 200px !important;
+        height: 200px !important;
+    }
+}

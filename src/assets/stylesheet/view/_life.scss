@@ -1,0 +1,24 @@
+.age-range {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    &[title]::after {
+        content: attr(title);
+        font-weight: bolder;
+        display: block;
+        margin-left: 5px;
+        padding: 8px 16px;
+        border-radius: 6px;
+        background: #DCF3E1;
+        color: $primary;
+    }
+}
+
+.list-style-chines{
+    list-style-type: '註'
+}
+
+.list-style{
+    list-style-type: '※'
+}
+

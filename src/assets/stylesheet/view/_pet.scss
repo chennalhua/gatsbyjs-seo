@@ -1,0 +1,88 @@
+.type-option {
+    width: 135px;
+    height: 135px;
+    cursor: pointer;
+    display: block;
+    color: $secondary;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    @include view-576 {
+        width: 130px;
+        height: 130px;
+    }
+    @include view-390 {
+        width: 110px;
+        height: 110px;
+    }
+    .form-check-input {
+        display: none !important;
+    }
+    &-active {
+        position: relative;
+        border: 4px solid $primary;
+    }
+    img {
+        position: absolute;
+        transform: translateX(-50%);
+        width: 140%;
+    }
+    img.dog {
+        left: 39%;
+    }
+    img.cat {
+        left: 60%;
+    }
+}
+
+.active-mes {
+    //快速試算 貓狗提示
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -1px;
+    background: $primary;
+    width: 100%;
+    color: #fff;
+    padding: 3px 0;
+}
+
+.upload {
+    &-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    &-button {
+        width: 125px;
+        height: 30px;
+        position: relative;
+        &::before {
+            content: "上傳圖片";
+            font-weight: bolder;
+            color: #fff;
+            position: absolute;
+            width: 100%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+    }
+    &-button.file {
+        &::before {
+            content: "上傳檔案";
+            font-weight: bolder;
+        }
+    }
+    &-input {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+}
