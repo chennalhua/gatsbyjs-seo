@@ -24,7 +24,9 @@
     "postbuild": "react-snap"
   },
   "reactSnap": {
-    "inlineCss": true
+    "inlineCss": true,
+    "inlineJs": true,
+    "removeScriptTags": false
   },
   "eslintConfig": {
     "extends": [
