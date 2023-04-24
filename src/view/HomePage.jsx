@@ -3,7 +3,8 @@ const HomePage = () => {
     return (
         <>
             <div className="container py-5">
-                首頁
+                <p>首頁</p>
+                <a href='/blog' className='btn btn-primary my-3'>部落格</a>
             </div>
         </>
     )
