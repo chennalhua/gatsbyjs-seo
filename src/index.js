@@ -10,7 +10,7 @@ import './assets/stylesheet/all.scss';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+root.hydrate(
   <React.StrictMode>
     <AppRouter />
   </React.StrictMode>
