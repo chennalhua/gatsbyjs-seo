@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e9562a83.css",
-    "main.js": "/static/js/main.e6f2f959.js",
+    "main.js": "/static/js/main.d66c6622.js",
     "static/js/787.0994cfad.chunk.js": "/static/js/787.0994cfad.chunk.js",
     "static/media/瘋貓祭_地圖.png": "/static/media/瘋貓祭_地圖.2e98c4823eb15212f894.png",
     "static/media/NO.9_L.jpg": "/static/media/NO.9_L.69b2cf11dd38bd6b059b.jpg",
@@ -47,11 +47,11 @@
     "index.html": "/index.html",
     "static/media/check.svg": "/static/media/check.dee064ab5015d79bab7c.svg",
     "main.e9562a83.css.map": "/static/css/main.e9562a83.css.map",
-    "main.e6f2f959.js.map": "/static/js/main.e6f2f959.js.map",
+    "main.d66c6622.js.map": "/static/js/main.d66c6622.js.map",
     "787.0994cfad.chunk.js.map": "/static/js/787.0994cfad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e9562a83.css",
-    "static/js/main.e6f2f959.js"
+    "static/js/main.d66c6622.js"
   ]
 }
